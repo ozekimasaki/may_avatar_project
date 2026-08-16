@@ -64,7 +64,7 @@ def param_names(payload: dict) -> list[str]:
         if isinstance(item, dict):
             name = item.get("name")
             if name:
-                names.append(str(name))
+                names.append(str(name).rstrip("\x00"))
         elif isinstance(item, str):
             names.append(item)
     return names

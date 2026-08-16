@@ -15,3 +15,7 @@ def test_inx_is_creator_v086(request):
     assert "Eye_L" in report["part_names"]
     assert "Hair_Front" in report["part_names"]
     assert report["node_count"] >= 20
+    assert "HeadRoot" in report["nodes"]
+    assert "NeckRoot" in report["nodes"]
+    assert "BodyRoot" in report["nodes"]
+    assert report["root_child_names"][0] == "BodyRoot"
