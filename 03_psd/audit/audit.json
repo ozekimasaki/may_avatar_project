@@ -1,0 +1,265 @@
+{
+  "layers": [
+    {
+      "name": "Hair_Back",
+      "rename": "Hair_Back",
+      "semantic": "hair_back",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Body_Base",
+      "rename": "Body_Base",
+      "semantic": "body_base",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Dress",
+      "rename": "Dress",
+      "semantic": "dress",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Apron",
+      "rename": "Apron",
+      "semantic": "apron",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Arm_L",
+      "rename": "Arm_L",
+      "semantic": "arm_l",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Hand_L",
+      "rename": "Hand_L",
+      "semantic": "hand_l",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Arm_R",
+      "rename": "Arm_R",
+      "semantic": "arm_r",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Hand_R",
+      "rename": "Hand_R",
+      "semantic": "hand_r",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Skirt",
+      "rename": "Skirt",
+      "semantic": "skirt",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Leg_L",
+      "rename": "Leg_L",
+      "semantic": "leg_l",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Leg_R",
+      "rename": "Leg_R",
+      "semantic": "leg_r",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Shoe_L",
+      "rename": "Shoe_L",
+      "semantic": "shoe_l",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Shoe_R",
+      "rename": "Shoe_R",
+      "semantic": "shoe_r",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Face",
+      "rename": "Face",
+      "semantic": "face",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Brow_L",
+      "rename": "Brow_L",
+      "semantic": "brow_l",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Brow_R",
+      "rename": "Brow_R",
+      "semantic": "brow_r",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Eye_L",
+      "rename": "Eye_L",
+      "semantic": "eye_l",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Eye_R",
+      "rename": "Eye_R",
+      "semantic": "eye_r",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Iris_L",
+      "rename": "Iris_L",
+      "semantic": "iris_l",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Iris_R",
+      "rename": "Iris_R",
+      "semantic": "iris_r",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Eyelash_L",
+      "rename": "Eyelash_L",
+      "semantic": "eyelash_l",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Eyelash_R",
+      "rename": "Eyelash_R",
+      "semantic": "eyelash_r",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Mouth",
+      "rename": "Mouth",
+      "semantic": "mouth",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Hair_Front",
+      "rename": "Hair_Front",
+      "semantic": "hair_front",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Hair_Side_L",
+      "rename": "Hair_Side_L",
+      "semantic": "hair_side_l",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Hair_Side_R",
+      "rename": "Hair_Side_R",
+      "semantic": "hair_side_r",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Ahoge",
+      "rename": "Ahoge",
+      "semantic": "ahoge",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Headband",
+      "rename": "Headband",
+      "semantic": "headband",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Flower",
+      "rename": "Flower",
+      "semantic": "flower",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Green_Ribbon",
+      "rename": "Green_Ribbon",
+      "semantic": "green_ribbon",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Blue_Ribbon",
+      "rename": "Blue_Ribbon",
+      "semantic": "blue_ribbon",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    },
+    {
+      "name": "Bell",
+      "rename": "Bell",
+      "semantic": "bell",
+      "score": 90,
+      "issues": [],
+      "repair": false
+    }
+  ],
+  "critical_issues": [],
+  "repair_groups": [],
+  "allow_partial": false,
+  "colorize": "master_rgb + seethrough_L_occupancy",
+  "notes": "Grayscale See-Through occupancy from L. Color from frozen master. No KIE repair."
+}

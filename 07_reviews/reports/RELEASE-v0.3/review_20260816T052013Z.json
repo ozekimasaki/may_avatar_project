@@ -1,0 +1,44 @@
+{
+  "gate": "RELEASE-v0.3",
+  "spec_files": [
+    "docs/mei_ai_after_image_pipeline_v003.md"
+  ],
+  "spec_sections": [
+    "50"
+  ],
+  "artifacts": [
+    {
+      "path": "04_inochi/rig_recipe_v001.json",
+      "sha256": "3d654705fd152b7cb81213cd4ecb5829ae7a089ecde041ce1892c5752042f948",
+      "present": true
+    }
+  ],
+  "tests": [
+    {
+      "id": "v03.expression_params_combo",
+      "result": "pass",
+      "detail": "recipe present"
+    },
+    {
+      "id": "v03.expression_atlas_at_most_one",
+      "result": "pass",
+      "detail": "0 expression gens"
+    }
+  ],
+  "scores": {},
+  "hard_fail": [],
+  "soft_fail": [],
+  "budget": {
+    "full_gen": 1,
+    "local_edit": 2,
+    "psd_repair": 0,
+    "cap": 6
+  },
+  "spec_drift": [],
+  "decision": "RETRY",
+  "rollback_to": null,
+  "next_gate": "RELEASE-v1.0",
+  "reviewer": "agent",
+  "human_approved": false,
+  "notes": "Expression atlas not generated. Use Brows+EyeOpen+Mouth after v0.2."
+}

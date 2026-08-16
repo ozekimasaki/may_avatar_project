@@ -1,0 +1,93 @@
+{
+  "gate": "SPEC-FREEZE",
+  "spec_files": [
+    "docs/mei_image_generation_ai_minimal_v003.md",
+    "docs/mei_ai_first_master_plan_v003.md"
+  ],
+  "spec_sections": [
+    "1",
+    "5",
+    "6",
+    "13"
+  ],
+  "artifacts": [
+    {
+      "path": "00_reference/character_sheet.png",
+      "sha256": "72c8cbe70f1541616a515146310cc113fea771d62593e1a430b35c70c6c30489",
+      "present": true
+    },
+    {
+      "path": "00_reference/character_spec.yaml",
+      "sha256": "4125e5ef08c9738bfd40dfec30243a0075dc1318ca3e8ffc09ebdd3b42bd765c",
+      "present": true
+    },
+    {
+      "path": "00_reference/prompts/master_v001.txt",
+      "sha256": "68a6d8954b99532ff6b65ee0e4ab7be271ac5c0eac0880141793b8f50b8a0717",
+      "present": true
+    },
+    {
+      "path": "00_reference/prompts/master_repair_v001.txt",
+      "sha256": "a4309bce61d6558e32732b9053c9235ee9bc2298b18e3ae00e4ea2385dbe6c8d",
+      "present": true
+    },
+    {
+      "path": "00_reference/prompts/face_atlas_v001.txt",
+      "sha256": "ef677f4ff2fada6a1127f2235c94cd9047c27ca2b86483e96bf4d97bdd8cd9ea",
+      "present": true
+    },
+    {
+      "path": "01_art/candidates/avatar_base.png",
+      "sha256": "b6f571303562a9acae8c48c232cc5d0d1bd24c397cd67440bd4b83b15d73b1e2",
+      "present": true
+    },
+    {
+      "path": "01_art/generation_log.csv",
+      "sha256": "c0a880dee6849ebb1ecb6cfab0477f1c3491cb5cf0f062ac3f327889afc683f2",
+      "present": true
+    },
+    {
+      "path": "07_reviews/gates.yaml",
+      "sha256": "49863aff66809766b0c99ee52ac8923e3bcc0022835f04971f42177f5d343c15",
+      "present": true
+    }
+  ],
+  "tests": [
+    {
+      "id": "layout.required_paths",
+      "result": "pass",
+      "detail": "numbered dirs and specs present"
+    },
+    {
+      "id": "spec.yaml_schema",
+      "result": "pass",
+      "detail": "identity keys present"
+    },
+    {
+      "id": "prompt.blocks",
+      "result": "pass",
+      "detail": "Identity/Geometry/Forbidden"
+    },
+    {
+      "id": "log.header",
+      "result": "pass",
+      "detail": "generation_log.csv header matches"
+    }
+  ],
+  "scores": {},
+  "hard_fail": [],
+  "soft_fail": [],
+  "budget": {
+    "full_gen": 1,
+    "local_edit": 1,
+    "psd_repair": 0,
+    "cap": 6
+  },
+  "spec_drift": [],
+  "decision": "PASS",
+  "rollback_to": null,
+  "next_gate": "MASTER-FREEZE",
+  "reviewer": "agent",
+  "human_approved": false,
+  "notes": "Sheet and candidate moved by git mv. No regeneration. Human approval still required."
+}

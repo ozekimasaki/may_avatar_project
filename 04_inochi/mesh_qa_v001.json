@@ -1,0 +1,46 @@
+{
+  "meshes": [
+    {
+      "name": "Apron",
+      "vertex_count": 56,
+      "triangles": 67,
+      "outside_alpha_rejected": 33,
+      "cap": 90,
+      "over_cap": false
+    },
+    {
+      "name": "Body_Base",
+      "vertex_count": 47,
+      "triangles": 62,
+      "outside_alpha_rejected": 20,
+      "cap": 90,
+      "over_cap": false
+    },
+    {
+      "name": "Face",
+      "vertex_count": 49,
+      "triangles": 83,
+      "outside_alpha_rejected": 0,
+      "cap": 180,
+      "over_cap": false
+    },
+    {
+      "name": "Hair_Front",
+      "vertex_count": 59,
+      "triangles": 86,
+      "outside_alpha_rejected": 16,
+      "cap": 140,
+      "over_cap": false
+    },
+    {
+      "name": "Mouth",
+      "vertex_count": 49,
+      "triangles": 75,
+      "outside_alpha_rejected": 7,
+      "cap": 220,
+      "over_cap": false
+    }
+  ],
+  "hard_fail": [],
+  "pass": true
+}

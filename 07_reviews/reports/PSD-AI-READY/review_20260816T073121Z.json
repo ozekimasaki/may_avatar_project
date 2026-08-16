@@ -1,0 +1,109 @@
+{
+  "gate": "PSD-AI-READY",
+  "spec_files": [
+    "docs/mei_ai_after_image_pipeline_v003.md"
+  ],
+  "spec_sections": [
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24"
+  ],
+  "artifacts": [
+    {
+      "path": "03_psd/raw/mei_seethrough_raw_v001.psd",
+      "sha256": "c81115fcf7c29593dc79d0571e4e919e4c66e66adcff3266c48f27c553d56154",
+      "present": true
+    },
+    {
+      "path": "03_psd/audit/layer_manifest.json",
+      "sha256": "d845e51e9315e27b4b2150981ab4a5e4e6ee9bfd56da86171b79fcd27288f925",
+      "present": true
+    },
+    {
+      "path": "03_psd/audit/contact_sheet.png",
+      "sha256": "fbf71d0e544ec622f1637a21375a5c1ab179cceed3a7a82fd5bbce423eeca131",
+      "present": true
+    },
+    {
+      "path": "03_psd/audit/audit.json",
+      "sha256": "326487f407d20dbb03869ff0bd18493478b8ff05888572c885c723728c52e911",
+      "present": true
+    },
+    {
+      "path": "03_psd/final/mei_rigready_v001.psd",
+      "sha256": "7924536bd590458a6ca0409505ed680761adb56aedc49f5a77c93b6c2fa83dd1",
+      "present": true
+    }
+  ],
+  "tests": [
+    {
+      "id": "psd.raw_unchanged_hash",
+      "result": "pass",
+      "detail": "raw sha256 unchanged"
+    },
+    {
+      "id": "psd.manifest_bbox",
+      "result": "pass",
+      "detail": "16 ST layers"
+    },
+    {
+      "id": "psd.contact_sheet_exists",
+      "result": "pass",
+      "detail": "raw and final contact sheets"
+    },
+    {
+      "id": "psd.critical_layers_named",
+      "result": "pass",
+      "detail": "Face Eye L/R Iris L/R Mouth Hair_Front/Back Body_Base Arm L/R Apron Skirt"
+    },
+    {
+      "id": "psd.repair_call_count_le_2",
+      "result": "pass",
+      "detail": "0 repairs"
+    },
+    {
+      "id": "psd.alpha_not_from_model",
+      "result": "pass",
+      "detail": "ST L occupancy + master RGB"
+    },
+    {
+      "id": "psd.rigready_has_no_empty_critical",
+      "result": "pass",
+      "detail": "final PSD RGB layers present"
+    }
+  ],
+  "scores": {},
+  "hard_fail": [],
+  "soft_fail": [
+    "See-Through raw is grayscale LA with A=255; occupancy from L<250",
+    "Apron/Dress/Skirt HSV split is approximate; composite retains Mei identity",
+    "No L/R in ST source; splits are geometric"
+  ],
+  "budget": {
+    "full_gen": 1,
+    "local_edit": 2,
+    "psd_repair": 0,
+    "cap": 6
+  },
+  "spec_drift": [],
+  "decision": "PASS",
+  "rollback_to": null,
+  "next_gate": "RIG-MVP",
+  "reviewer": "agent",
+  "human_approved": false,
+  "notes": "Colorized grayscale See-Through from frozen master. Critical semantics exist. No KIE repair. allow_partial false. Inochi import is next. human_approved remains false."
+}

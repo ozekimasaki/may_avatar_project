@@ -1,0 +1,48 @@
+# Reproduction pins. Update only at freeze / release gates.
+project: mei_avatar
+spec_version: v003
+
+images:
+  character_sheet: 00_reference/character_sheet.png
+  master_candidate: 01_art/candidates/avatar_base.png
+  master: 01_art/master/mei_master_v001.png
+  face_atlas: 01_art/face_atlas/mei_face_atlas_v001.png
+
+prompts:
+  master: master_v001
+  master_repair: master_repair_v001
+  face_atlas: face_atlas_v001
+
+kie:
+  primary_model: gpt-image-2-image-to-image
+  grok_edit: grok-imagine-image-2-0/image-edit
+  grok_segment: grok-imagine-image-2-0/segment-map
+  grok_t2i: grok-imagine-image-2-0/text-to-image
+  t2i_forbidden_for_master: true
+  master_aspect_ratio: "2:3"
+  master_resolution: "1K"
+
+see_through:
+  repo: https://github.com/shitagaki-lab/see-through
+  commit_file: 02_seethrough/see_through_commit.txt
+  python: "3.12"
+  pytorch: "2.8.0+cu128"
+  torchvision: "0.23.0"
+  torchaudio: "2.8.0"
+  session_name: mei-st-run
+
+inochi:
+  creator_version: "0.8.6"
+  creator_zip: https://github.com/Inochi2D/inochi-creator/releases/download/v0.8.6/inochi-creator-win32.zip
+  note: win32 means Win32 API, not 32-bit. Requires x86_64 + VC++ 2022 x64.
+  local_path: tools/inochi-creator/inochi-creator.exe
+  nightly_forbidden: true
+
+skills:
+  kie-imagegen: .cursor/skills/kie-imagegen
+  mei-master: .cursor/skills/mei-master
+  mei-gate-review: .cursor/skills/mei-gate-review
+
+budget:
+  v0.1_cap: 6
+  full_body_after_master_freeze: 0

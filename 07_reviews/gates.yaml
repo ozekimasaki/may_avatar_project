@@ -1,0 +1,245 @@
+version: 1
+budget_cap: 6
+order:
+  - SPEC-FREEZE
+  - MASTER-FREEZE
+  - FACE-ASSET-FREEZE
+  - ST-RUN
+  - PSD-AI-READY
+  - RIG-MVP
+  - TRACK-OK
+  - OBS-OK
+  - RELEASE-v0.1
+  - RELEASE-v0.2
+  - RELEASE-v0.3
+  - RELEASE-v1.0
+
+rollback_map:
+  visual_layer: PSD-AI-READY
+  fringe: PSD-AI-READY
+  hole: PSD-AI-READY
+  mesh: RIG-MVP
+  motion: RIG-MVP
+  keyform: RIG-MVP
+  tracking_noise: TRACK-OK
+  obs_crop: OBS-OK
+  face_diff: FACE-ASSET-FREEZE
+  master_identity: STOP
+
+gates:
+  SPEC-FREEZE:
+    next: MASTER-FREEZE
+    rollback_to: SPEC-FREEZE
+    spec_files:
+      - docs/mei_image_generation_ai_minimal_v003.md
+      - docs/mei_ai_first_master_plan_v003.md
+    spec_sections: ["1", "5", "6", "13"]
+    required_artifacts:
+      - 00_reference/character_sheet.png
+      - 00_reference/character_spec.yaml
+      - 00_reference/prompts/master_v001.txt
+      - 00_reference/prompts/master_repair_v001.txt
+      - 00_reference/prompts/face_atlas_v001.txt
+      - 01_art/candidates/avatar_base.png
+      - 01_art/generation_log.csv
+      - 07_reviews/gates.yaml
+    tests:
+      - layout.required_paths
+      - spec.yaml_schema
+      - prompt.blocks
+      - log.header
+    require_runtime: false
+
+  MASTER-FREEZE:
+    next: FACE-ASSET-FREEZE
+    rollback_to: MASTER-FREEZE
+    spec_files:
+      - docs/mei_image_generation_ai_minimal_v003.md
+    spec_sections: ["13", "14", "15", "20"]
+    required_artifacts:
+      - 01_art/master/mei_master_v001.png
+      - 01_art/master/mei_master_v001.sha256
+      - 01_art/master/master_qa_v001.json
+    tests:
+      - master.exists_and_hash
+      - master.qa_schema
+      - master.size_portrait
+      - master.symmetry_metric
+      - master.no_fullbody_after_candidate
+    require_runtime: false
+
+  FACE-ASSET-FREEZE:
+    next: ST-RUN
+    rollback_to: FACE-ASSET-FREEZE
+    spec_files:
+      - docs/mei_image_generation_ai_minimal_v003.md
+      - docs/mei_ai_after_image_pipeline_v003.md
+    spec_sections: ["21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "35", "36", "37"]
+    required_artifacts:
+      - 01_art/face_atlas/mei_face_atlas_v001.png
+      - 01_art/face_atlas/mei_master_face_crop_v001.png
+      - 01_art/face_atlas/extracted/mouth_a.png
+      - 01_art/face_atlas/extracted/mouth_i.png
+      - 01_art/face_atlas/extracted/mouth_u.png
+      - 01_art/face_atlas/extracted/mouth_e.png
+      - 01_art/face_atlas/extracted/mouth_o.png
+      - 01_art/face_atlas/extracted/eye_half.png
+      - 01_art/face_atlas/extracted/eye_close.png
+    tests:
+      - atlas.one_file
+      - atlas.grid_9
+      - atlas.cell_alignment
+      - atlas.only_mouth_or_lid_diff
+      - atlas.extracted_assets_present
+      - atlas.g002_retry_at_most_one
+    require_runtime: false
+
+  ST-RUN:
+    next: PSD-AI-READY
+    rollback_to: ST-RUN
+    spec_files:
+      - docs/mei_ai_after_image_pipeline_v003.md
+    spec_sections: ["3", "4", "5", "6", "7"]
+    required_artifacts:
+      - 02_seethrough/notebook/mei_see_through_v002.ipynb
+      - 02_seethrough/run_seethrough.py
+      - 02_seethrough/see_through_commit.txt
+      - scripts/st_run_colab.sh
+      - 03_psd/raw/mei_seethrough_raw_v001.psd
+    tests:
+      - st.notebook_cells_named
+      - st.runner_script_exists
+      - st.runner_verifies_sha256
+      - st.commit_pin_file
+      - st.manifest_schema
+      - st.raw_psd_copied_and_readonly_flag
+      - st.input_is_frozen_master_hash
+      - st.colab_wrapper_always_stops
+    require_runtime: true
+
+  PSD-AI-READY:
+    next: RIG-MVP
+    rollback_to: PSD-AI-READY
+    spec_files:
+      - docs/mei_ai_after_image_pipeline_v003.md
+    spec_sections: ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"]
+    required_artifacts:
+      - 03_psd/raw/mei_seethrough_raw_v001.psd
+      - 03_psd/audit/layer_manifest.json
+      - 03_psd/audit/contact_sheet.png
+      - 03_psd/audit/audit.json
+      - 03_psd/final/mei_rigready_v001.psd
+    tests:
+      - psd.raw_unchanged_hash
+      - psd.manifest_bbox
+      - psd.contact_sheet_exists
+      - psd.critical_layers_named
+      - psd.repair_call_count_le_2
+      - psd.alpha_not_from_model
+      - psd.rigready_has_no_empty_critical
+    require_runtime: true
+
+  RIG-MVP:
+    next: TRACK-OK
+    rollback_to: RIG-MVP
+    spec_files:
+      - docs/mei_ai_after_image_pipeline_v003.md
+    spec_sections: ["25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39"]
+    required_artifacts:
+      - 04_inochi/rig_recipe_v001.json
+      - 04_inochi/mesh_qa_v001.json
+      - 04_inochi/creator_steps_v001.md
+    tests:
+      - rig.recipe_schema
+      - rig.required_parameters_present
+      - rig.mesh_no_outside_alpha
+      - rig.mesh_density_caps
+      - rig.pivot_head_below_face_center
+      - rig.inp_not_overwriting_without_backup
+    require_runtime: false
+
+  TRACK-OK:
+    next: OBS-OK
+    rollback_to: TRACK-OK
+    spec_files:
+      - docs/mei_ai_after_image_pipeline_v003.md
+    spec_sections: ["40", "41", "42", "43"]
+    required_artifacts:
+      - 05_session/tracking_raw.csv
+      - 05_session/calibration_proposal.json
+    tests:
+      - track.csv_columns_and_min_rows
+      - track.silent_mouth_percentile
+      - track.blink_mapping_monotonic
+      - track.calibration_proposal_schema
+    require_runtime: true
+
+  OBS-OK:
+    next: RELEASE-v0.1
+    rollback_to: OBS-OK
+    spec_files:
+      - docs/mei_ai_after_image_pipeline_v003.md
+    spec_sections: ["44"]
+    required_artifacts:
+      - 06_obs/screenshots
+    tests:
+      - obs.required_screenshots
+      - obs.min_resolution
+      - obs.face_bbox_in_frame
+    require_runtime: true
+
+  RELEASE-v0.1:
+    next: RELEASE-v0.2
+    rollback_to: OBS-OK
+    spec_files:
+      - docs/mei_ai_after_image_pipeline_v003.md
+    spec_sections: ["45", "46", "47", "48"]
+    required_artifacts:
+      - 07_reviews/reports/RELEASE-v0.1/stream_review.json
+    tests:
+      - v01.recording_duration_ge_30min
+      - v01.segment_contact_sheets
+      - v01.stream_review_schema
+      - v01.budget_under_cap
+    require_runtime: true
+
+  RELEASE-v0.2:
+    next: RELEASE-v0.3
+    rollback_to: RIG-MVP
+    spec_files:
+      - docs/mei_ai_after_image_pipeline_v003.md
+    spec_sections: ["49"]
+    required_artifacts:
+      - 04_inochi/rig_recipe_v001.json
+    tests:
+      - v02.no_new_fullbody_images
+      - v02.physics_keys_present
+      - v02.smoke_10min_schema
+    require_runtime: true
+
+  RELEASE-v0.3:
+    next: RELEASE-v1.0
+    rollback_to: RIG-MVP
+    spec_files:
+      - docs/mei_ai_after_image_pipeline_v003.md
+    spec_sections: ["50"]
+    required_artifacts:
+      - 04_inochi/rig_recipe_v001.json
+    tests:
+      - v03.expression_params_combo
+      - v03.expression_atlas_at_most_one
+    require_runtime: true
+
+  RELEASE-v1.0:
+    next: null
+    rollback_to: RELEASE-v0.3
+    spec_files:
+      - docs/mei_ai_after_image_pipeline_v003.md
+      - docs/mei_ai_first_master_plan_v003.md
+    spec_sections: ["51", "52"]
+    required_artifacts:
+      - 08_repro/pins.yaml
+    tests:
+      - v10.pins_present
+      - v10.repro_check
+    require_runtime: false

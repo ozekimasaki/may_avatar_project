@@ -1,0 +1,100 @@
+{
+  "gate": "ST-RUN",
+  "spec_files": [
+    "docs/mei_ai_after_image_pipeline_v003.md"
+  ],
+  "spec_sections": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "artifacts": [
+    {
+      "path": "02_seethrough/notebook/mei_see_through_v002.ipynb",
+      "sha256": "bf4c4767ec6a8ee14349023566c9d6fcd5356fe9fcbcbd37ba0cc4588f5e76a9",
+      "present": true
+    },
+    {
+      "path": "02_seethrough/run_seethrough.py",
+      "sha256": "8ba7aa15e611ae8ad4952588f95981e3e0114dfbfba66293cede4861dd28960d",
+      "present": true
+    },
+    {
+      "path": "02_seethrough/see_through_commit.txt",
+      "sha256": "ddb0ea22f185de9ca3fb730637ac28941e14f0759e9eef4868878cc92f4218ad",
+      "present": true
+    },
+    {
+      "path": "scripts/st_run_colab.sh",
+      "sha256": "2a9222cad859ab657e5c46141a0188d0d6eaefde6a92c10a3082f6b52a50a7c3",
+      "present": true
+    },
+    {
+      "path": "03_psd/raw/mei_seethrough_raw_v001.psd",
+      "sha256": "c81115fcf7c29593dc79d0571e4e919e4c66e66adcff3266c48f27c553d56154",
+      "present": true
+    }
+  ],
+  "tests": [
+    {
+      "id": "st.notebook_cells_named",
+      "result": "pass",
+      "detail": "00-18"
+    },
+    {
+      "id": "st.runner_script_exists",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "id": "st.runner_verifies_sha256",
+      "result": "pass",
+      "detail": "mismatch non-zero"
+    },
+    {
+      "id": "st.commit_pin_file",
+      "result": "pass",
+      "detail": "7f139bb"
+    },
+    {
+      "id": "st.manifest_schema",
+      "result": "pass",
+      "detail": "run_20260816T140140"
+    },
+    {
+      "id": "st.raw_psd_copied_and_readonly_flag",
+      "result": "pass",
+      "detail": "03_psd/raw +R"
+    },
+    {
+      "id": "st.input_is_frozen_master_hash",
+      "result": "pass",
+      "detail": "32adeb08"
+    },
+    {
+      "id": "st.colab_wrapper_always_stops",
+      "result": "pass",
+      "detail": "trap colab stop"
+    }
+  ],
+  "scores": {},
+  "hard_fail": [],
+  "soft_fail": [],
+  "budget": {
+    "full_gen": 1,
+    "local_edit": 2,
+    "psd_repair": 0,
+    "cap": 6
+  },
+  "spec_drift": [
+    "CLI has no --high-mem; used L4 default RAM"
+  ],
+  "decision": "PASS",
+  "rollback_to": null,
+  "next_gate": "PSD-AI-READY",
+  "reviewer": "agent",
+  "human_approved": false,
+  "notes": "Colab L4, torch 2.8.0+cu128, session mei-st-run stopped. Human approval required."
+}

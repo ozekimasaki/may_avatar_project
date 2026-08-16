@@ -1,0 +1,95 @@
+A. Identity
+Create one chibi anime character based strictly on the attached Mei character design reference.
+
+Character identity:
+- short warm brown bob haircut
+- one prominent ahoge
+- bright green eyes
+- white maid headband
+- white primrose-like flower ornament
+- green ribbon hair ornament
+- brown maid dress
+- clean white apron
+- blue-green neck bow
+- gold bell at the neck
+- dark green tights
+- brown Mary Jane strap shoes
+
+Preserve the same recognizable character identity, palette, hairstyle, accessories, and clothing design from the reference.
+
+B. Geometry
+Exactly one character.
+Full body.
+Perfect straight front view.
+Camera centered at character center.
+No perspective turn.
+Head upright.
+Shoulders level.
+Hips level.
+Eyes looking directly forward.
+Both arms hanging naturally but separated slightly from the torso.
+A visible strip of background between each arm and the body.
+Both hands fully visible.
+Hands must not overlap the skirt or apron.
+Both legs slightly separated.
+A visible strip of background between the legs.
+Both shoes entirely inside the frame.
+
+C. Art style
+Super-deformed chibi proportions suitable for 2D avatar rigging.
+Bold, clean, smooth anime outlines.
+Simple flat cel shading.
+One simple shadow level.
+Large readable facial features.
+Simple grouped hair shapes.
+Minimal fine detail.
+Clean silhouette.
+No painterly texture.
+No complex lighting.
+
+D. Rig constraints
+Design for semantic layer separation and 2D rigging:
+- front hair must read separately from side hair
+- side hair must read separately from shoulders
+- ahoge must have a clean isolated silhouette
+- flower and green ribbons must have readable boundaries
+- apron boundary must be clearly visible against the brown dress
+- sleeves must read separately from arms/hands
+- left and right legs must not visually merge
+- avoid tiny frills or thin loose strands
+
+E. Forbidden
+Do not create:
+- side view
+- three-quarter view
+- head tilt
+- dynamic pose
+- bent torso
+- crossed legs
+- crossed arms
+- hands behind body
+- hands touching skirt
+- cropped feet
+- cropped ahoge
+- props
+- text
+- labels
+- extra characters
+- background objects
+- cast shadow
+- detailed scenery
+- gradient background
+- extra hair ornaments
+- changed clothing colors
+- changed eye color
+
+Master expression:
+Both eyes open.
+Neutral eyebrows.
+Closed mouth.
+Very subtle friendly smile.
+No teeth.
+No open mouth.
+
+Background:
+flat pure/near-white background

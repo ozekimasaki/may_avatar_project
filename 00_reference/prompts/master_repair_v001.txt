@@ -1,0 +1,8 @@
+Modify only the indicated region.
+Preserve every unmasked element exactly.
+Keep the character identity, pose, proportions, colors, line thickness, lighting, and all other pixels visually unchanged.
+
+Match the exact chibi line art, color palette, cel shading, proportions, and design of the existing Mei master.
+Do not regenerate the full body.
+Do not change hair color, eye color, clothing colors, accessories, or background.
+Only repair the requested issue.

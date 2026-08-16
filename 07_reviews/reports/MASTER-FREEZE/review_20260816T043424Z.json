@@ -1,0 +1,82 @@
+{
+  "gate": "MASTER-FREEZE",
+  "spec_files": [
+    "docs/mei_image_generation_ai_minimal_v003.md"
+  ],
+  "spec_sections": [
+    "13",
+    "14",
+    "15",
+    "20"
+  ],
+  "artifacts": [
+    {
+      "path": "01_art/master/mei_master_v001.png",
+      "sha256": "32adeb0895f5f6c9358f9c292bd278d7a12edfef57b0a14b462f67af920102bd",
+      "present": true
+    },
+    {
+      "path": "01_art/master/mei_master_v001.sha256",
+      "sha256": null,
+      "present": false
+    },
+    {
+      "path": "01_art/master/master_qa_v001.json",
+      "sha256": "a586039a218ea796ad1416540bf000f1a2f5fbf4dc3f04a4ce8a300b271b2798",
+      "present": true
+    }
+  ],
+  "tests": [
+    {
+      "id": "master.exists_and_hash",
+      "result": "pass",
+      "detail": "png+sha256"
+    },
+    {
+      "id": "master.qa_schema",
+      "result": "pass",
+      "detail": "hard_fail/scores/total/decision"
+    },
+    {
+      "id": "master.size_portrait",
+      "result": "pass",
+      "detail": "1024x1536"
+    },
+    {
+      "id": "master.symmetry_metric",
+      "result": "pass",
+      "detail": "0.6361"
+    },
+    {
+      "id": "master.no_fullbody_after_candidate",
+      "result": "pass",
+      "detail": "no extra FULL rows"
+    }
+  ],
+  "scores": {
+    "identity": 23,
+    "front_view": 15,
+    "symmetry": 5,
+    "arm_separation": 10,
+    "leg_separation": 10,
+    "hair_separation": 10,
+    "clothing_separation": 10,
+    "readability": 5,
+    "background": 5
+  },
+  "hard_fail": [],
+  "soft_fail": [],
+  "budget": {
+    "full_gen": 1,
+    "local_edit": 1,
+    "psd_repair": 0,
+    "cap": 6
+  },
+  "spec_drift": [],
+  "decision": "PASS",
+  "rollback_to": null,
+  "next_gate": "FACE-ASSET-FREEZE",
+  "reviewer": "agent",
+  "human_approved": false,
+  "notes": "Frozen from avatar_base_edit1.png after one GPT overlay. Original candidate retained. Human approval required."
+}

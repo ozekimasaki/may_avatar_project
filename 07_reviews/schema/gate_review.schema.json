@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://may-avatar.local/gate_review.schema.json",
+  "title": "Mei gate review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "gate",
+    "spec_files",
+    "spec_sections",
+    "artifacts",
+    "tests",
+    "scores",
+    "hard_fail",
+    "soft_fail",
+    "budget",
+    "spec_drift",
+    "decision",
+    "rollback_to",
+    "next_gate",
+    "reviewer",
+    "human_approved"
+  ],
+  "properties": {
+    "gate": { "type": "string" },
+    "spec_files": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "spec_sections": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256", "present"],
+        "properties": {
+          "path": { "type": "string" },
+          "sha256": { "type": ["string", "null"] },
+          "present": { "type": "boolean" }
+        }
+      }
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "result", "detail"],
+        "properties": {
+          "id": { "type": "string" },
+          "result": { "enum": ["pass", "fail", "skip"] },
+          "detail": { "type": "string" }
+        }
+      }
+    },
+    "scores": { "type": "object" },
+    "hard_fail": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "soft_fail": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["full_gen", "local_edit", "psd_repair", "cap"],
+      "properties": {
+        "full_gen": { "type": "integer", "minimum": 0 },
+        "local_edit": { "type": "integer", "minimum": 0 },
+        "psd_repair": { "type": "integer", "minimum": 0 },
+        "cap": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "spec_drift": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "decision": { "enum": ["PASS", "RETRY", "ROLLBACK", "STOP"] },
+    "rollback_to": { "type": ["string", "null"] },
+    "next_gate": { "type": ["string", "null"] },
+    "reviewer": { "type": "string" },
+    "human_approved": { "type": "boolean" },
+    "notes": { "type": "string" }
+  }
+}

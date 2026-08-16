@@ -1,0 +1,119 @@
+{
+  "gate": "FACE-ASSET-FREEZE",
+  "spec_files": [
+    "docs/mei_image_generation_ai_minimal_v003.md",
+    "docs/mei_ai_after_image_pipeline_v003.md"
+  ],
+  "spec_sections": [
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "35",
+    "36",
+    "37"
+  ],
+  "artifacts": [
+    {
+      "path": "01_art/face_atlas/mei_face_atlas_v001.png",
+      "sha256": "faddcc04358d07fa40ea0a300f8a7a4febb9b6cd27a48adee1a37f5bad1e22c6",
+      "present": true
+    },
+    {
+      "path": "01_art/face_atlas/mei_master_face_crop_v001.png",
+      "sha256": "0252a309a0b8b28b3edfd54ade6680b0c74e5e4c8b5e28b8dca5ebbbc2ed4782",
+      "present": true
+    },
+    {
+      "path": "01_art/face_atlas/extracted/mouth_a.png",
+      "sha256": "9ee0ea500fdc8ceffe12e71d493e09e46ac132f2926a8a8774bdac821f1a1167",
+      "present": true
+    },
+    {
+      "path": "01_art/face_atlas/extracted/mouth_i.png",
+      "sha256": "39456355e54c68cc4cec490192891f0943cf1ab3e7dffa28117c6cf678273033",
+      "present": true
+    },
+    {
+      "path": "01_art/face_atlas/extracted/mouth_u.png",
+      "sha256": "1657d16102eb2df51c20d7a60b870144b8fb739719b02f4b5a6ed523d269f843",
+      "present": true
+    },
+    {
+      "path": "01_art/face_atlas/extracted/mouth_e.png",
+      "sha256": "bd0690af34bf9ffee92d243293e5a39d813d87a52f7b23ba0d99d88a25b38b20",
+      "present": true
+    },
+    {
+      "path": "01_art/face_atlas/extracted/mouth_o.png",
+      "sha256": "4d21d9d2def4ebe909b3cd88fffddeab52c7e9e01a8579339c9f7e762f42acb4",
+      "present": true
+    },
+    {
+      "path": "01_art/face_atlas/extracted/eye_half.png",
+      "sha256": "99697f319e39a6fc4b35fd22410900f1927d51d06b7930ebc31ae98feb70aeea",
+      "present": true
+    },
+    {
+      "path": "01_art/face_atlas/extracted/eye_close.png",
+      "sha256": "ac4f86a1cbb85ebfc95635717ccc9e686ef0be546fbe55b7f576bbbe68b4b2c5",
+      "present": true
+    }
+  ],
+  "tests": [
+    {
+      "id": "atlas.one_file",
+      "result": "pass",
+      "detail": "mei_face_atlas_v001.png"
+    },
+    {
+      "id": "atlas.grid_9",
+      "result": "pass",
+      "detail": "3x3"
+    },
+    {
+      "id": "atlas.cell_alignment",
+      "result": "pass",
+      "detail": "extract_report 7 cells"
+    },
+    {
+      "id": "atlas.only_mouth_or_lid_diff",
+      "result": "pass",
+      "detail": "alpha ROI"
+    },
+    {
+      "id": "atlas.extracted_assets_present",
+      "result": "pass",
+      "detail": "7 patches"
+    },
+    {
+      "id": "atlas.g002_retry_at_most_one",
+      "result": "pass",
+      "detail": "G002R=0"
+    }
+  ],
+  "scores": {},
+  "hard_fail": [],
+  "soft_fail": [
+    "atlas cells are usable but not a perfect vowel sheet"
+  ],
+  "budget": {
+    "full_gen": 1,
+    "local_edit": 2,
+    "psd_repair": 0,
+    "cap": 6
+  },
+  "spec_drift": [],
+  "decision": "PASS",
+  "rollback_to": null,
+  "next_gate": "ST-RUN",
+  "reviewer": "agent",
+  "human_approved": false,
+  "notes": "G002 one image. mouth_close/eye_open copied from master face crop. Human approval required."
+}

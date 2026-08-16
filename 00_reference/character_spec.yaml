@@ -1,0 +1,78 @@
+name: メイ
+name_en: Mei
+occupation: maid
+version: v001
+source_sheet: 00_reference/character_sheet.png
+master_candidate: 01_art/candidates/avatar_base.png
+
+identity:
+  hair:
+    cut: short warm brown bob
+    ahoge: one prominent isolated cowlick
+    color: warm brown
+  eyes:
+    color: bright green
+    highlights: white speculars
+    gaze: forward
+  flower:
+    type: white primrose-like
+    center: yellow
+    placement: left side of head from character view (viewer's right)
+  ribbon:
+    hair: forest green ribbons with the flower
+    neck: blue-green / sky-blue bow
+    bell: spherical gold at neck bow center
+  clothing:
+    headband: white ruffled maid katyusha
+    dress: dark brown long-sleeve maid dress
+    apron: clean white with frilled straps and hem
+    cuffs: white
+    tights: dark forest green
+  shoes:
+    type: brown Mary Jane strap shoes
+  expression_master:
+    eyes: both open
+    brows: neutral
+    mouth: closed
+    smile: very subtle friendly
+    teeth: none
+
+palette:
+  hair: "#5A3A28"
+  eyes: "#3CB44A"
+  neck_ribbon: "#5BA8D9"
+  accent: "#3D8B8B"
+  dress: "#4A2E22"
+  apron: "#F4F0E8"
+  tights: "#1F4A38"
+  shoes: "#6B3F2A"
+  skin: "#F3D4C2"
+  flower: "#F7F4EE"
+  flower_center: "#E8C547"
+  bell: "#D4AF37"
+  line: "#2A1A12"
+
+hard_fail:
+  - not_front_view
+  - cropped_full_body
+  - fused_arms
+  - one_leg
+  - broken_fingers
+  - different_character
+  - eyes_asymmetric
+
+soft_fail:
+  - open_mouth_on_master
+  - extra_frills
+  - slight_head_tilt
+  - weak_arm_gap
+  - weak_leg_gap
+  - background_not_near_white
+
+geometry:
+  view: perfect straight front
+  arms: hanging, separated from torso with visible background strip
+  hands: fully visible, not overlapping skirt
+  legs: slightly separated with visible background strip
+  shoes: entirely inside frame
+  ahoge: entirely inside frame

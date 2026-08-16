@@ -1,0 +1,62 @@
+{
+  "gate": "TRACK-OK",
+  "spec_files": [
+    "docs/mei_ai_after_image_pipeline_v003.md"
+  ],
+  "spec_sections": [
+    "40",
+    "41",
+    "42",
+    "43"
+  ],
+  "artifacts": [
+    {
+      "path": "05_session/tracking_raw.csv",
+      "sha256": null,
+      "present": false
+    },
+    {
+      "path": "05_session/calibration_proposal.json",
+      "sha256": null,
+      "present": false
+    }
+  ],
+  "tests": [
+    {
+      "id": "track.csv_columns_and_min_rows",
+      "result": "skip",
+      "detail": "waiting for Session capture"
+    },
+    {
+      "id": "track.silent_mouth_percentile",
+      "result": "skip",
+      "detail": ""
+    },
+    {
+      "id": "track.blink_mapping_monotonic",
+      "result": "skip",
+      "detail": ""
+    },
+    {
+      "id": "track.calibration_proposal_schema",
+      "result": "skip",
+      "detail": ""
+    }
+  ],
+  "scores": {},
+  "hard_fail": [],
+  "soft_fail": [],
+  "budget": {
+    "full_gen": 1,
+    "local_edit": 2,
+    "psd_repair": 0,
+    "cap": 6
+  },
+  "spec_drift": [],
+  "decision": "RETRY",
+  "rollback_to": null,
+  "next_gate": "OBS-OK",
+  "reviewer": "agent",
+  "human_approved": false,
+  "notes": "Scripts ready. Human must record tracking_raw.csv then python -m scripts.calibrate_tracking."
+}

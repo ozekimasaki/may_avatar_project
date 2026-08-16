@@ -1,0 +1,8 @@
+{
+  "method": "parameter_combo",
+  "sources": ["Brows", "EyeOpen", "Mouth"],
+  "sheet_reference": "00_reference/character_sheet.png",
+  "expression_atlas_budget": 1,
+  "hotkeys": true,
+  "recalibrate": true
+}

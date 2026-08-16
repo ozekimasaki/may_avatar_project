@@ -1,0 +1,49 @@
+{
+  "gate": "OBS-OK",
+  "spec_files": [
+    "docs/mei_ai_after_image_pipeline_v003.md"
+  ],
+  "spec_sections": [
+    "44"
+  ],
+  "artifacts": [
+    {
+      "path": "06_obs/screenshots",
+      "sha256": null,
+      "present": true
+    }
+  ],
+  "tests": [
+    {
+      "id": "obs.required_screenshots",
+      "result": "skip",
+      "detail": "waiting for OBS capture"
+    },
+    {
+      "id": "obs.min_resolution",
+      "result": "skip",
+      "detail": ""
+    },
+    {
+      "id": "obs.face_bbox_in_frame",
+      "result": "skip",
+      "detail": ""
+    }
+  ],
+  "scores": {},
+  "hard_fail": [],
+  "soft_fail": [],
+  "budget": {
+    "full_gen": 1,
+    "local_edit": 2,
+    "psd_repair": 0,
+    "cap": 6
+  },
+  "spec_drift": [],
+  "decision": "RETRY",
+  "rollback_to": null,
+  "next_gate": "RELEASE-v0.1",
+  "reviewer": "agent",
+  "human_approved": false,
+  "notes": "Scripts ready. Human captures face/mouth/eyes/flower/full."
+}

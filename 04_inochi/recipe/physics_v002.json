@@ -1,0 +1,8 @@
+{
+  "BodyX": { "min": -1, "max": 1, "default": 0 },
+  "Breath": { "min": 0, "max": 1, "default": 0.2 },
+  "Ahoge": { "type": "pendulum", "enabled": false },
+  "Hair": { "type": "spring", "enabled": false },
+  "Ribbon": { "type": "spring", "enabled": false },
+  "notes": "v0.2 overlay. Do not enable until RIG-MVP INP exists. No new images."
+}

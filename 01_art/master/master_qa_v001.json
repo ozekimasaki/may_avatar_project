@@ -1,0 +1,43 @@
+{
+  "source": "01_art/candidates/avatar_base_edit1.png",
+  "width": 1024,
+  "height": 1536,
+  "aspect": 1.5,
+  "bbox": [
+    183,
+    517,
+    639,
+    965
+  ],
+  "metrics": {
+    "symmetry_iou": 0.6361,
+    "palette_hit": 0.5714,
+    "arm_components": 3,
+    "leg_components": 2,
+    "eye_delta": 1.54,
+    "identity_flags": {
+      "hair_brown": true,
+      "eye_green": true,
+      "apron_white": true,
+      "dress_brown": true,
+      "tights_green": true
+    },
+    "ident": 0.7857
+  },
+  "hard_fail": [],
+  "soft_fail": [],
+  "scores": {
+    "identity": 23,
+    "front_view": 15,
+    "symmetry": 5,
+    "arm_separation": 10,
+    "leg_separation": 10,
+    "hair_separation": 10,
+    "clothing_separation": 10,
+    "readability": 5,
+    "background": 5
+  },
+  "total": 93,
+  "decision": "FREEZE",
+  "frozen": "01_art/master/mei_master_v001.png"
+}

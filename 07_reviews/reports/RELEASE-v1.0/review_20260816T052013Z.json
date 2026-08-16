@@ -1,0 +1,46 @@
+{
+  "gate": "RELEASE-v1.0",
+  "spec_files": [
+    "docs/mei_ai_after_image_pipeline_v003.md",
+    "docs/mei_ai_first_master_plan_v003.md"
+  ],
+  "spec_sections": [
+    "51",
+    "52"
+  ],
+  "artifacts": [
+    {
+      "path": "08_repro/pins.yaml",
+      "sha256": "89be897bce14b793fed478753f9d1a935f62bd485ed31948e510107fe3280f27",
+      "present": true
+    }
+  ],
+  "tests": [
+    {
+      "id": "v10.pins_present",
+      "result": "pass",
+      "detail": "08_repro/pins.yaml"
+    },
+    {
+      "id": "v10.repro_check",
+      "result": "pass",
+      "detail": "repro_check.py"
+    }
+  ],
+  "scores": {},
+  "hard_fail": [],
+  "soft_fail": [],
+  "budget": {
+    "full_gen": 1,
+    "local_edit": 2,
+    "psd_repair": 0,
+    "cap": 6
+  },
+  "spec_drift": [],
+  "decision": "RETRY",
+  "rollback_to": null,
+  "next_gate": null,
+  "reviewer": "agent",
+  "human_approved": false,
+  "notes": "Pins and repro_check exist. v1.0 PASS needs human final approval after v0.1-v0.3."
+}

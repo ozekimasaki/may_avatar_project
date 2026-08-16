@@ -1,0 +1,33 @@
+{
+  "cells": [
+    {
+      "name": "mouth_a",
+      "path": "01_art/face_atlas/extracted/mouth_a.png"
+    },
+    {
+      "name": "mouth_i",
+      "path": "01_art/face_atlas/extracted/mouth_i.png"
+    },
+    {
+      "name": "mouth_u",
+      "path": "01_art/face_atlas/extracted/mouth_u.png"
+    },
+    {
+      "name": "mouth_e",
+      "path": "01_art/face_atlas/extracted/mouth_e.png"
+    },
+    {
+      "name": "mouth_o",
+      "path": "01_art/face_atlas/extracted/mouth_o.png"
+    },
+    {
+      "name": "eye_half",
+      "path": "01_art/face_atlas/extracted/eye_half.png"
+    },
+    {
+      "name": "eye_close",
+      "path": "01_art/face_atlas/extracted/eye_close.png"
+    }
+  ],
+  "grid": 9
+}

@@ -1,0 +1,30 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Secret scan — .env must not be tracked
+        run: |
+          if git ls-files --error-unmatch .env >/dev/null 2>&1; then
+            echo ".env is tracked; refuse"
+            exit 1
+          fi
+          echo ".env is not tracked"
+      - name: Pytest (no GPU / no Colab)
+        run: pytest tests/
+      - name: Review schema
+        run: python scripts/review_gate.py --validate-schema
+      - name: generation_log.csv columns
+        run: python scripts/budget.py --check-header

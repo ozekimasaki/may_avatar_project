@@ -1,0 +1,282 @@
+{
+  "source": "03_psd/raw/mei_seethrough_raw_v001.psd",
+  "sha256": "c81115fcf7c29593dc79d0571e4e919e4c66e66adcff3266c48f27c553d56154",
+  "size": [
+    1280,
+    1280
+  ],
+  "layers": [
+    {
+      "index": 0,
+      "name": "back hair",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        434,
+        106,
+        821,
+        440
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 387,
+      "height": 334
+    },
+    {
+      "index": 1,
+      "name": "legwear",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        526,
+        742,
+        743,
+        1174
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 217,
+      "height": 432
+    },
+    {
+      "index": 2,
+      "name": "footwear",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        526,
+        1093,
+        738,
+        1235
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 212,
+      "height": 142
+    },
+    {
+      "index": 3,
+      "name": "neck",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        611,
+        375,
+        661,
+        446
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 50,
+      "height": 71
+    },
+    {
+      "index": 4,
+      "name": "handwear",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        363,
+        452,
+        899,
+        756
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 536,
+      "height": 304
+    },
+    {
+      "index": 5,
+      "name": "headwear",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        480,
+        105,
+        811,
+        338
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 331,
+      "height": 233
+    },
+    {
+      "index": 6,
+      "name": "topwear",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        368,
+        411,
+        895,
+        1025
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 527,
+      "height": 614
+    },
+    {
+      "index": 7,
+      "name": "ears",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        507,
+        306,
+        763,
+        383
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 256,
+      "height": 77
+    },
+    {
+      "index": 8,
+      "name": "face",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        511,
+        163,
+        755,
+        423
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 244,
+      "height": 260
+    },
+    {
+      "index": 9,
+      "name": "nose",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        630,
+        352,
+        634,
+        356
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 4,
+      "height": 4
+    },
+    {
+      "index": 10,
+      "name": "mouth",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        614,
+        378,
+        656,
+        387
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 42,
+      "height": 9
+    },
+    {
+      "index": 11,
+      "name": "eyewhite",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        542,
+        293,
+        724,
+        355
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 182,
+      "height": 62
+    },
+    {
+      "index": 12,
+      "name": "irides",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        557,
+        298,
+        713,
+        354
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 156,
+      "height": 56
+    },
+    {
+      "index": 13,
+      "name": "eyebrow",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        534,
+        250,
+        717,
+        276
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 183,
+      "height": 26
+    },
+    {
+      "index": 14,
+      "name": "eyelash",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        532,
+        281,
+        735,
+        341
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 203,
+      "height": 60
+    },
+    {
+      "index": 15,
+      "name": "front hair",
+      "parent": null,
+      "kind": "layer",
+      "bbox": [
+        477,
+        2,
+        776,
+        429
+      ],
+      "visible": true,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "width": 299,
+      "height": 427
+    }
+  ]
+}

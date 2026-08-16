@@ -1,0 +1,33 @@
+Using the attached Mei master face as the exact identity and geometry reference, create a clean facial-expression reference atlas.
+
+Every cell must show the exact same character, same head shape, same eye size, same iris color, same hairstyle, same skin tone, same line weight, same camera angle, and same facial proportions.
+
+Only the requested mouth or eyelid shape changes.
+
+Layout a 3x3 equal-sized grid on a flat simple background:
+
+Row 1: A | I | U
+Row 2: E | O | HALF
+Row 3: CLOSE | spare | spare
+
+Required mouth states:
+A: wide natural open vowel
+I: narrow horizontal open shape
+U: small rounded shape
+E: medium horizontal shape
+O: larger rounded shape
+
+Required eye states:
+Half: natural halfway blink, mouth remains the master closed mouth
+Closed: clean relaxed closed-eyelid line, mouth remains the master closed mouth
+
+No teeth unless minimally required.
+No tongue unless minimally required.
+No head movement.
+No gaze movement.
+No eyebrow change.
+No cheek change.
+No hairstyle change.
+No accessory change.
+Flat simple background.
+Clear equal-sized cells.

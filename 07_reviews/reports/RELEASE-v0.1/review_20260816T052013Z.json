@@ -1,0 +1,57 @@
+{
+  "gate": "RELEASE-v0.1",
+  "spec_files": [
+    "docs/mei_ai_after_image_pipeline_v003.md"
+  ],
+  "spec_sections": [
+    "45",
+    "46",
+    "47",
+    "48"
+  ],
+  "artifacts": [
+    {
+      "path": "07_reviews/reports/RELEASE-v0.1/stream_review.json",
+      "sha256": null,
+      "present": false
+    }
+  ],
+  "tests": [
+    {
+      "id": "v01.recording_duration_ge_30min",
+      "result": "skip",
+      "detail": "no recording"
+    },
+    {
+      "id": "v01.segment_contact_sheets",
+      "result": "skip",
+      "detail": ""
+    },
+    {
+      "id": "v01.stream_review_schema",
+      "result": "skip",
+      "detail": ""
+    },
+    {
+      "id": "v01.budget_under_cap",
+      "result": "pass",
+      "detail": "under cap 6"
+    }
+  ],
+  "scores": {},
+  "hard_fail": [],
+  "soft_fail": [],
+  "budget": {
+    "full_gen": 1,
+    "local_edit": 2,
+    "psd_repair": 0,
+    "cap": 6
+  },
+  "spec_drift": [],
+  "decision": "RETRY",
+  "rollback_to": null,
+  "next_gate": "RELEASE-v0.2",
+  "reviewer": "agent",
+  "human_approved": false,
+  "notes": "Budget OK. 30min stream is human. Do not reuse this review as PASS later."
+}

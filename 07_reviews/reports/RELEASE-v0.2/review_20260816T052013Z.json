@@ -1,0 +1,49 @@
+{
+  "gate": "RELEASE-v0.2",
+  "spec_files": [
+    "docs/mei_ai_after_image_pipeline_v003.md"
+  ],
+  "spec_sections": [
+    "49"
+  ],
+  "artifacts": [
+    {
+      "path": "04_inochi/rig_recipe_v001.json",
+      "sha256": "3d654705fd152b7cb81213cd4ecb5829ae7a089ecde041ce1892c5752042f948",
+      "present": true
+    }
+  ],
+  "tests": [
+    {
+      "id": "v02.no_new_fullbody_images",
+      "result": "pass",
+      "detail": "no extra FULL"
+    },
+    {
+      "id": "v02.physics_keys_present",
+      "result": "pass",
+      "detail": "recipe/physics_v002.json"
+    },
+    {
+      "id": "v02.smoke_10min_schema",
+      "result": "skip",
+      "detail": "needs Stage B INP"
+    }
+  ],
+  "scores": {},
+  "hard_fail": [],
+  "soft_fail": [],
+  "budget": {
+    "full_gen": 1,
+    "local_edit": 2,
+    "psd_repair": 0,
+    "cap": 6
+  },
+  "spec_drift": [],
+  "decision": "RETRY",
+  "rollback_to": null,
+  "next_gate": "RELEASE-v0.3",
+  "reviewer": "agent",
+  "human_approved": false,
+  "notes": "Physics overlay specified. Apply only after RIG-MVP INP. No new images."
+}

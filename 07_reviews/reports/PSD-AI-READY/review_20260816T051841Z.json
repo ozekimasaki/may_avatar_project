@@ -1,0 +1,107 @@
+{
+  "gate": "PSD-AI-READY",
+  "spec_files": [
+    "docs/mei_ai_after_image_pipeline_v003.md"
+  ],
+  "spec_sections": [
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24"
+  ],
+  "artifacts": [
+    {
+      "path": "03_psd/raw/mei_seethrough_raw_v001.psd",
+      "sha256": "c81115fcf7c29593dc79d0571e4e919e4c66e66adcff3266c48f27c553d56154",
+      "present": true
+    },
+    {
+      "path": "03_psd/audit/layer_manifest.json",
+      "sha256": "d845e51e9315e27b4b2150981ab4a5e4e6ee9bfd56da86171b79fcd27288f925",
+      "present": true
+    },
+    {
+      "path": "03_psd/audit/contact_sheet.png",
+      "sha256": "fbf71d0e544ec622f1637a21375a5c1ab179cceed3a7a82fd5bbce423eeca131",
+      "present": true
+    },
+    {
+      "path": "03_psd/audit/audit.json",
+      "sha256": "8125210beafea25369206747f0b9a86f6a8122f55eb81dc4e1a48b1efa0510c4",
+      "present": true
+    },
+    {
+      "path": "03_psd/final/mei_rigready_v001.psd",
+      "sha256": "6edd0e0396e092a9283a7a7e25de68a94a5df513306466c52bef1f0594e09624",
+      "present": true
+    }
+  ],
+  "tests": [
+    {
+      "id": "psd.raw_unchanged_hash",
+      "result": "pass",
+      "detail": "raw sha256 unchanged"
+    },
+    {
+      "id": "psd.manifest_bbox",
+      "result": "pass",
+      "detail": "16 layers"
+    },
+    {
+      "id": "psd.contact_sheet_exists",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "id": "psd.critical_layers_named",
+      "result": "pass",
+      "detail": "allow_partial; L/R not split"
+    },
+    {
+      "id": "psd.repair_call_count_le_2",
+      "result": "pass",
+      "detail": "0 repairs"
+    },
+    {
+      "id": "psd.alpha_not_from_model",
+      "result": "pass",
+      "detail": "composite_rgb contract"
+    },
+    {
+      "id": "psd.rigready_has_no_empty_critical",
+      "result": "pass",
+      "detail": "final psd non-empty"
+    }
+  ],
+  "scores": {},
+  "hard_fail": [],
+  "soft_fail": [
+    "no Eye_L/R Arm_L/R Apron Hair_Side"
+  ],
+  "budget": {
+    "full_gen": 1,
+    "local_edit": 2,
+    "psd_repair": 0,
+    "cap": 6
+  },
+  "spec_drift": [],
+  "decision": "RETRY",
+  "rollback_to": null,
+  "next_gate": "RIG-MVP",
+  "reviewer": "agent",
+  "human_approved": false,
+  "notes": "See-Through layers renamed. L/R split and apron separation still missing. No repair budget spent. Do not PASS to Inochi until critical semantics exist or human accepts partial."
+}
