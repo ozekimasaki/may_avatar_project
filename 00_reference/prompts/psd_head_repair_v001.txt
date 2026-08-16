@@ -1,0 +1,32 @@
+Repair Group H — Head (Face, Eyes, Iris, Mouth, Hair, Ahoge, Headband, Flower, Ribbons).
+
+Repair only the masked missing or corrupted region of this extracted 2D avatar layer.
+
+The full Mei master image is the ground truth for identity, palette, line weight, clothing design and style.
+
+The extracted layer and neighboring-context image define the exact geometry.
+
+Fill only the missing region so the layer remains visually consistent when moved during 2D rigging.
+
+Do not redesign any visible part.
+Do not add accessories.
+Do not change colors.
+Do not change line thickness.
+Do not move existing visible pixels unnecessarily.
+Continue hidden anatomy/clothing/hair naturally behind the occluding part.
+
+Preserve:
+- short warm brown bob
+- bright green eyes
+- white maid headband
+- white primrose-like flower
+- green ribbon
+- skin tone and cel shading of the master
+
+Alpha is not requested. Output RGB only. The pipeline will keep See-Through / geometry alpha.
+
+Grok fallback (only if GPT repair failed twice):
+Preserve the source image exactly except for the selected/missing region.
+Complete only the hidden hair/face area in the same chibi anime style.
+Match outline thickness, brown/white/green/blue palette, one-step cel shading, and geometry implied by the visible region.
+No redesign. No new detail. No texture. No lighting change.

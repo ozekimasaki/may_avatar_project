@@ -8,6 +8,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: ${{ github.workspace }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,6 +27,6 @@ jobs:
       - name: Pytest (no GPU / no Colab)
         run: pytest tests/
       - name: Review schema
-        run: python scripts/review_gate.py --validate-schema
+        run: python -m scripts.review_gate --validate-schema
       - name: generation_log.csv columns
-        run: python scripts/budget.py --check-header
+        run: python -m scripts.budget --check-header

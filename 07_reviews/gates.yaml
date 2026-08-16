@@ -40,6 +40,8 @@ gates:
       - 00_reference/prompts/master_v001.txt
       - 00_reference/prompts/master_repair_v001.txt
       - 00_reference/prompts/face_atlas_v001.txt
+      - 00_reference/prompts/psd_head_repair_v001.txt
+      - 00_reference/prompts/psd_body_repair_v001.txt
       - 01_art/candidates/avatar_base.png
       - 01_art/generation_log.csv
       - 07_reviews/gates.yaml
@@ -149,6 +151,7 @@ gates:
       - 04_inochi/rig_recipe_v001.json
       - 04_inochi/mesh_qa_v001.json
       - 04_inochi/creator_steps_v001.md
+      - 04_inochi/working/may.inx
     tests:
       - rig.recipe_schema
       - rig.required_parameters_present
@@ -156,6 +159,7 @@ gates:
       - rig.mesh_density_caps
       - rig.pivot_head_below_face_center
       - rig.inp_not_overwriting_without_backup
+      - rig.inx_is_creator_v086
     require_runtime: false
 
   TRACK-OK:

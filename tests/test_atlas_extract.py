@@ -53,3 +53,6 @@ def test_g002_retry_at_most_one():
     retries = [row for row in read_log() if row.get("id") in {"G002R", "G002"}]
     g002r = [row for row in retries if row.get("id") == "G002R"]
     assert len(g002r) <= 1
+    g002 = [row for row in retries if row.get("id") == "G002"]
+    assert g002
+    assert g002[0].get("accepted") == "true"

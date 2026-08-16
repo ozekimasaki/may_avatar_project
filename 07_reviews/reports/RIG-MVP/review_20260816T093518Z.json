@@ -1,0 +1,102 @@
+{
+  "gate": "RIG-MVP",
+  "spec_files": [
+    "docs/mei_ai_after_image_pipeline_v003.md"
+  ],
+  "spec_sections": [
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39"
+  ],
+  "artifacts": [
+    {
+      "path": "04_inochi/rig_recipe_v001.json",
+      "sha256": "921ea7e05017effee1a79aa4582f5400d4852ee5e238dabb489f933081a6202a",
+      "present": true
+    },
+    {
+      "path": "04_inochi/mesh_qa_v001.json",
+      "sha256": "3d95d5feb5de595d9dd2a98aeb4b2395918c80419f3760cb3eb8183a5aabb616",
+      "present": true
+    },
+    {
+      "path": "04_inochi/creator_steps_v001.md",
+      "sha256": "56ffb50d5b8300adb171c425864b880c19cbef9ed9cee594e109964954efca94",
+      "present": true
+    },
+    {
+      "path": "04_inochi/working/may.inx",
+      "sha256": "4168d279ff9b886e104bfe4088342c614453d6af0831e1c916a32f13f7c4737a",
+      "present": true
+    }
+  ],
+  "tests": [
+    {
+      "id": "rig.recipe_schema",
+      "result": "pass",
+      "detail": "nodes/pivots/parameters"
+    },
+    {
+      "id": "rig.required_parameters_present",
+      "result": "pass",
+      "detail": "physics empty"
+    },
+    {
+      "id": "rig.mesh_no_outside_alpha",
+      "result": "pass",
+      "detail": "bootstrap meshes"
+    },
+    {
+      "id": "rig.mesh_density_caps",
+      "result": "pass",
+      "detail": "under cap"
+    },
+    {
+      "id": "rig.pivot_head_below_face_center",
+      "result": "pass",
+      "detail": "HeadRoot below FaceCenter"
+    },
+    {
+      "id": "rig.inp_not_overwriting_without_backup",
+      "result": "pass",
+      "detail": "creator_steps backup"
+    },
+    {
+      "id": "rig.inx_is_creator_v086",
+      "result": "pass",
+      "detail": "may.inx TRNSRTS v0.8.6; params empty"
+    }
+  ],
+  "scores": {},
+  "hard_fail": [],
+  "soft_fail": [
+    "may.inx has PSD parts under Root; HeadRoot/NeckRoot hierarchy not built",
+    "param is null; EyeOpen/Mouth/Head/EyeBall missing",
+    "Creator Blink/Mouth/Head/Eye screenshots missing"
+  ],
+  "budget": {
+    "full_gen": 1,
+    "local_edit": 2,
+    "psd_repair": 0,
+    "cap": 6
+  },
+  "spec_drift": [],
+  "decision": "RETRY",
+  "rollback_to": null,
+  "next_gate": "TRACK-OK",
+  "reviewer": "agent",
+  "human_approved": false,
+  "notes": "Recipe, meshes, and imported may.inx exist. Stage A node/parameter/texture/screenshot steps are human Creator GUI. Do not invent INX. Do not PASS until blink.png mouth.png head.png eyes.png are in 07_reviews/reports/RIG-MVP/."
+}
