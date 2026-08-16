@@ -17,10 +17,15 @@ doc = {
         {"id": "rig.mesh_density_caps", "result": "pass", "detail": "under cap"},
         {"id": "rig.pivot_head_below_face_center", "result": "pass", "detail": "HeadRoot below FaceCenter"},
         {"id": "rig.inp_not_overwriting_without_backup", "result": "pass", "detail": "creator_steps backup"},
+        {"id": "rig.inx_is_creator_v086", "result": "pass", "detail": "may.inx TRNSRTS v0.8.6; params empty"},
     ],
     "scores": {},
     "hard_fail": [],
-    "soft_fail": ["working/mei_mvp.inp and Creator motion screenshots are human Stage A"],
+    "soft_fail": [
+        "may.inx has PSD parts under Root; HeadRoot/NeckRoot hierarchy not built",
+        "param is null; EyeOpen/Mouth/Head/EyeBall missing",
+        "Creator Blink/Mouth/Head/Eye screenshots missing",
+    ],
     "budget": count_budget(),
     "spec_drift": [],
     "decision": "RETRY",
@@ -28,6 +33,6 @@ doc = {
     "next_gate": spec["next"],
     "reviewer": "agent",
     "human_approved": False,
-    "notes": "Recipe and mesh QA are ready. Creator GUI Stage A is human. Do not PASS until Blink/Mouth/Head/Eye screenshots are in 07_reviews/reports/RIG-MVP/.",
+    "notes": "Recipe, meshes, and imported may.inx exist. Stage A node/parameter/texture/screenshot steps are human Creator GUI. Do not invent INX. Do not PASS until blink.png mouth.png head.png eyes.png are in 07_reviews/reports/RIG-MVP/.",
 }
 print(write_review(doc))

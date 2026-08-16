@@ -8,37 +8,40 @@
 環境は Python 3.12 の venv (`.venv`) を使う。依存は update script が `.venv` に入れる（`requirements.txt`）。
 コマンドを打つ前に `source .venv/bin/activate` するか、`.venv/bin/python` を直接使う。
 
-### スクリプトの実行 (重要な落とし穴)
+### スクリプトの実行
 
 `scripts/*.py` の多くは `from scripts.xxx import ...` でパッケージ import する。
-`python scripts/foo.py` を直接叩くと `ModuleNotFoundError: No module named 'scripts'` になる。
-リポジトリ root を path に載せて実行すること:
+リポジトリ root を path に載せるか、モジュールとして実行する:
 
 ```bash
-PYTHONPATH=. python scripts/review_gate.py --validate-schema
-PYTHONPATH=. python scripts/qa_master.py
+python -m scripts.review_gate --validate-schema
+python -m scripts.budget --check-header
+python -m scripts.inx_inspect
 ```
 
-これは既存の未修正バグで、GitHub CI (`.github/workflows/ci.yml` の Review schema / budget ステップ) も同じ理由で失敗している。環境の問題ではない。コード修正はこの env セットアップのスコープ外。
+`review_gate.py` と `inx_inspect.py` は `python scripts/foo.py` でも repo root を `sys.path` に足す。
+CI は job 全体に `PYTHONPATH: ${{ github.workspace }}` を付け、`python -m scripts.*` を使う。
 
 `pytest` は `pytest.ini` に `pythonpath = .` があるので `PYTHONPATH` 無しで通る。
 
 ### テスト / 検証 (CI 相当)
 
 ```bash
-pytest tests/                                    # 49 passed / 12 skipped が正常
-python scripts/run_tests.py --gate SPEC-FREEZE   # Gate 単位。run_tests は内部で pytest を呼ぶので PYTHONPATH 不要
-PYTHONPATH=. python scripts/review_gate.py --validate-schema   # review JSON の schema 検証
-PYTHONPATH=. python scripts/budget.py --check-header           # generation_log.csv のヘッダ検証
+pytest tests/                                    # 55 passed / 12 skipped が正常
+python scripts/run_tests.py --gate SPEC-FREEZE
+python -m scripts.review_gate --validate-schema
+python -m scripts.budget --check-header
 ```
 
-skip される 12 件は、まだ生成していない Gate 成果物に依存するもの（`tests/conftest.py` の `require_path` が該当 Gate 以外では skip する）。欠陥ではない。
+`require_path` が該当 Gate 以外で skip するテストは、まだ人間作業の成果物が無いため（Session CSV、OBS スクショ、30分録画）。欠陥ではない。
 
 ### アプリ実行 (パイプライン本体)
 
 画像・PSD 処理系スクリプトはローカルの `01_art/` 資産に対してオフラインで動く（例: `scripts/qa_master.py` は `avatar_base.png` を解析して `01_art/master/master_qa_v001.json` を出力）。実行すると tracked な成果物 (JSON 等) を上書きすることがあるので、デモ後は `git checkout -- <path>` で戻すこと。
 
 `scripts/kie_client.py` を使う生成/編集系 (`generate_face_atlas.py`, `edit_master.py` 等) は `KIE_API_KEY` が必要。`.env.example` を `.env` にコピーして key を入れる。See-Through (`scripts/st_run_colab.sh`) は GPU/Colab が要るのでこの環境では走らない。
+
+Inochi Creator の GUI（ノード階層、パラメータ、まばたき/口テクスチャ、スクショ）は人間作業。`may.inx` を捏造しない。読み取りは `python -m scripts.inx_inspect`。
 
 ### 予算・Gate ルール
 

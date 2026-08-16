@@ -42,6 +42,7 @@ skills:
   kie-imagegen: .cursor/skills/kie-imagegen
   mei-master: .cursor/skills/mei-master
   mei-gate-review: .cursor/skills/mei-gate-review
+  mei-rig-stage-a: .cursor/skills/mei-rig-stage-a
 
 budget:
   v0.1_cap: 6

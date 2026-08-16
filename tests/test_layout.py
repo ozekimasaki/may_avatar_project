@@ -6,11 +6,16 @@ REQUIRED = [
     "00_reference/prompts/master_v001.txt",
     "00_reference/prompts/master_repair_v001.txt",
     "00_reference/prompts/face_atlas_v001.txt",
+    "00_reference/prompts/psd_head_repair_v001.txt",
+    "00_reference/prompts/psd_body_repair_v001.txt",
+    "04_inochi/working/may.inx",
+    "scripts/inx_inspect.py",
     "01_art/candidates/avatar_base.png",
     "01_art/generation_log.csv",
     "02_seethrough/notebook/mei_see_through_v002.ipynb",
     "02_seethrough/run_seethrough.py",
     "02_seethrough/see_through_commit.txt",
+    "02_seethrough/output/.gitkeep",
     "04_inochi/creator_steps_v001.md",
     "07_reviews/gates.yaml",
     "07_reviews/schema/gate_review.schema.json",
@@ -31,6 +36,7 @@ REQUIRED = [
     ".cursor/skills/kie-imagegen/SKILL.md",
     ".cursor/skills/mei-master/SKILL.md",
     ".cursor/skills/mei-gate-review/SKILL.md",
+    ".cursor/skills/mei-rig-stage-a/SKILL.md",
 ]
 
 

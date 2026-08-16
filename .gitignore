@@ -13,7 +13,7 @@ htmlcov/
 venv/
 tools/
 !tools/.gitkeep
-02_seethrough/output/
+02_seethrough/output/*
 !02_seethrough/output/.gitkeep
 03_psd/audit/layers/
 !03_psd/audit/layers/.gitkeep

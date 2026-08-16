@@ -21,6 +21,17 @@ def test_prompt_blocks():
         assert needle in text
 
 
+def test_psd_repair_prompts():
+    head = (ROOT / "00_reference" / "prompts" / "psd_head_repair_v001.txt").read_text(encoding="utf-8")
+    body = (ROOT / "00_reference" / "prompts" / "psd_body_repair_v001.txt").read_text(encoding="utf-8")
+    for text in (head, body):
+        assert "Repair only the masked missing or corrupted region" in text
+        assert "Do not redesign" in text
+        assert "Output RGB only" in text
+    assert "Head" in head
+    assert "Body" in body
+
+
 def test_log_header():
     from scripts.budget import check_header
 
