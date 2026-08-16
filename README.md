@@ -26,7 +26,7 @@ v0.1 画像生成 hard cap は **6**。MASTER-FREEZE 後の全身再生成は **
 | FACE-ASSET-FREEZE | Atlas 1枚 + 抽出 |
 | ST-RUN | Colab CLI で See-Through。必ず `colab stop` |
 | PSD-AI-READY | audit / repair≤2 / rebuild |
-| RIG-MVP | recipe + mesh + Creator Stage A |
+| RIG-MVP | recipe + mesh + Creator Stage A。指示書は [`04_inochi/creator_steps_v001.md`](04_inochi/creator_steps_v001.md) |
 | TRACK-OK | tracking CSV + calibration |
 | OBS-OK | 配信スクショ QA |
 | RELEASE-v0.1 | 30分安定 |

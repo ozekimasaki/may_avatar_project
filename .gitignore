@@ -19,7 +19,6 @@ tools/
 !03_psd/audit/layers/.gitkeep
 *.inp.bak
 03_psd/final/_occ/
-/may.inx
 04_inochi/backups/*.inx
 .idea/
 .vscode/
